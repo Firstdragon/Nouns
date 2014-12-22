@@ -8,7 +8,7 @@ using namespace std;
 
 void obrabotka(nouns *noun, int &n, string &str){
 	int choice;
-	cout << str << " ïðîïóñòèòü(0)/óçíàòü ÷èñëî(1)/ïîìåíÿòü ÷èñëî(2)/âûéòè èç ïðîãðàììû(3)" << endl;
+	cout << str << " Ð¿Ñ€Ð¾Ð¿ÑƒÑÑ‚Ð¸Ñ‚ÑŒ(0)/ÑƒÐ·Ð½Ð°Ñ‚ÑŒ Ñ‡Ð¸ÑÐ»Ð¾(1)/Ð¿Ð¾Ð¼ÐµÐ½ÑÑ‚ÑŒ Ñ‡Ð¸ÑÐ»Ð¾(2)/Ð²Ñ‹Ð¹Ñ‚Ð¸ Ð¸Ð· Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹(3)" << endl;
 	cin >> choice;
 	if (choice != 1 && choice != 2 && choice != 3) return;
 	if (choice == 3) exit(0);
@@ -16,13 +16,13 @@ void obrabotka(nouns *noun, int &n, string &str){
 	{
 		if (noun[i].singular == str)
 		{
-			if (choice == 1) cout << "Ñëîâî â åäèíñòâåííîì ÷èñëå" << endl;
+			if (choice == 1) cout << "Ð¡Ð»Ð¾Ð²Ð¾ Ð² ÐµÐ´Ð¸Ð½ÑÑ‚Ð²ÐµÐ½Ð½Ð¾Ð¼ Ñ‡Ð¸ÑÐ»Ðµ" << endl;
 			else cout << noun[i].plural << endl;
 			return;
 		}
 		else if (noun[i].plural == str)
 		{
-			if (choice == 1) cout << "Ñëîâî âî ìíîæåñòâåííîì ÷èñëå" << endl;
+			if (choice == 1) cout << "Ð¡Ð»Ð¾Ð²Ð¾ Ð²Ð¾ Ð¼Ð½Ð¾Ð¶ÐµÑÑ‚Ð²ÐµÐ½Ð½Ð¾Ð¼ Ñ‡Ð¸ÑÐ»Ðµ" << endl;
 			else cout << noun[i].singular << endl;
 			return;
 		}
