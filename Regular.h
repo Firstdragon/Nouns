@@ -20,8 +20,8 @@ void ifregular(string &str, int choice)
 	chislo(str, i, pl);
 	if (choice == 1)
 	{
-		if (pl == 1) cout << "Ñëîâî â åäèíñòâåííîì ÷èñëå" << endl;
-		else if (pl == 2) cout << "Ñëîâî âî ìíîæåñòâåííîì ÷èñëå" << endl;
+		if (pl == 1) cout << "Ð¡Ð»Ð¾Ð²Ð¾ Ð² ÐµÐ´Ð¸Ð½ÑÑ‚Ð²ÐµÐ½Ð½Ð¾Ð¼ Ñ‡Ð¸ÑÐ»Ðµ" << endl;
+		else if (pl == 2) cout << "Ð¡Ð»Ð¾Ð²Ð¾ Ð²Ð¾ Ð¼Ð½Ð¾Ð¶ÐµÑÑ‚Ð²ÐµÐ½Ð½Ð¾Ð¼ Ñ‡Ð¸ÑÐ»Ðµ" << endl;
 	}
 	if (choice == 2)
 	{
