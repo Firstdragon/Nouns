@@ -17,7 +17,7 @@ public:
 		ifstream in("irregular.txt");
 		if (!in)
 		{
-			cout << "File can not be open\n";
+			cout << "Файл с существительными-исключениями не может быть открыт"<< endl;
 			return 0;
 		}
 		else
