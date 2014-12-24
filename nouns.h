@@ -40,26 +40,12 @@ private:
 	}
 
 	int obrabotka(irregulars *noun, int &n, string &str, int &choice){
+		irregulars irr;
 		cout << str << " пропустить(0)/узнать число(1)/поменять число(2)/выйти из программы(3)" << endl;
 		cin >> choice;
 		if (choice != 1 && choice != 2 && choice != 3) return 0;
 		if (choice == 3) exit(0);
-		for (int i = 0; i < n; i++)
-		{
-			if (noun[i].singular == str)
-			{
-				if (choice == 1) cout << "Слово в единственном числе" << endl;
-				else cout << noun[i].plural << endl;
-				return 0;
-			}
-			else if (noun[i].plural == str)
-			{
-				if (choice == 1) cout << "Слово во множественном числе" << endl;
-				else cout << noun[i].singular << endl;
-				return 0;
-			}
-		}
-		return 1;
+		return irr.checkirregular(noun, n, str, choice);
 	}
 
 	void chislo(string &str, int length, int &pl){
@@ -192,6 +178,11 @@ private:
 		str.clear();
 	}
 public:
+	nouns()
+	{
+		string slovo = "";
+	}
+
 	void menu()
 	{
 		irregulars nauns;
