@@ -1,35 +1,26 @@
-#pragma once
-#include <string>
-#include <iostream>
-#include <fstream>
-using namespace std;
-
-
-class nouns
+class irregulars
 {
-private:
+public:
 	string singular;
 	string plural;
 
-public:
-	nouns* read(int &n)
+	irregulars* read(int &n)
 	{
 		ifstream in("irregular.txt");
 		if (!in)
 		{
-			cout << "Файл с существительными-исключениями не может быть открыт"<< endl;
+			cout << "Файл с существительными-исключениями не может быть открыт" << endl;
 			return 0;
 		}
 		else
 		{
+			string str;
 			for (n = 0;; n++)
 			{
-				string str;
 				getline(in, str);
 				if (in.eof()) break;
 			}
-
-			nouns *noun = new nouns[n];
+			irregulars *noun = new irregulars[n];
 
 			in.clear();
 			in.seekg(0);
@@ -41,27 +32,9 @@ public:
 		}
 	}
 
-	int obrabotka(nouns *noun, int &n, string &str, int &choice){
-		cout << str << " пропустить(0)/узнать число(1)/поменять число(2)/выйти из программы(3)" << endl;
-		cin >> choice;
-		if (choice != 1 && choice != 2 && choice != 3) return 0;
-		if (choice == 3) exit(0);
-		for (int i = 0; i < n; i++)
-		{
-			if (noun[i].singular == str)
-			{
-				if (choice == 1) cout << "Слово в единственном числе" << endl;
-				else cout << noun[i].plural << endl;
-				return 0;
-			}
-			else if (noun[i].plural == str)
-			{
-				if (choice == 1) cout << "Слово во множественном числе" << endl;
-				else cout << noun[i].singular << endl;
-				return 0;
-			}
-		}
-		return 1;
+	~irregulars()
+	{
+		singular.clear();
+		plural.clear();
 	}
 };
-
