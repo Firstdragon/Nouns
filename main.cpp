@@ -6,10 +6,10 @@
 using namespace std;
 
 int main(){
-	vhod vohd;
+	nouns nauns;
 	rus();
 	int n;
-	vohd.menu();
+	nauns.menu();
 	system("pause");
 	return 0;
 }
